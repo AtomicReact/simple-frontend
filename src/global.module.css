@@ -1,10 +1,7 @@
-.app {
-    color: aquamarine;
-    background-color: #0e2424;  
-    border: 1px solid cadetblue;
-    padding: 15px;
+.largerText {
+    font-size: 3em;
 }
 
-.largerText {
-    font-size: 2em;
+#title {
+    color: #06812b;
 }

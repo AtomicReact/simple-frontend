@@ -1,9 +1,16 @@
 .atom {
-    border: 1px solid red; padding: 5px;
+    border: 1px solid #02bada;
+    padding: 5px;
 }
 
-.atom [data-atomic-nucleus] {
-    border: 1px dashed blue;
+.title {
+    color: #02bada;
+}
+
+.atom [a-n] {
+    border: 1px dashed #02bada;
+    border-radius: 10px;
+    margin: 20px;
     padding: 5px 10px;
 }
 
@@ -13,6 +20,8 @@
 }
 
 .bottom {
+    margin-top: 10px;
     text-align: right;
-    border: 1px solid #F0F;
+    /* border-style: dotted; */
+    border: 1px dotted #02bada;
 }

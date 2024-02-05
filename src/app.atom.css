@@ -1,0 +1,10 @@
+.app {
+    color: aquamarine;
+    background-color: #0e2424;  
+    border: 1px solid green;
+    padding: 15px;
+}
+
+.reset {
+    margin-top: 25px;
+}

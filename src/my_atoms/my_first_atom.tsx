@@ -1,77 +1,84 @@
-import { AtomicClass, IAtomic } from "atomicreact-ts"
+import { Atom } from "atomicreact-ts"
 
 import { PizzaAtom } from "./pizza/index.jsx"
 
-import style, { bottom as botttomStyle } from "./my_first_atom.module.css"
 import { largerText } from "../global.module.css"
+import style, { bottom as botttomStyle } from "./my_first_atom.module.css"
+import { Tag } from "./tag/index.jsx"
 
-interface IAtomicProps {
-    sub?: string,
-    nucleus?: boolean
-}
-
-interface IProps extends IAtomicProps {
+interface Props {
     title: string,
     description?: string,
     claps: number,
     onRendered?: (id: string) => void
 }
 
-enum Subs { /* Sub atoms */
-    ClapButton,
-    ClapSpan = "ClapSpan",
-    PizzaButton = "PizzaButton"
+interface Subs { /* Sub atoms */
+    clapButton: HTMLButtonElement,
+    clapSpan: HTMLSpanElement,
+    pizzaButton: HTMLButtonElement,
+    myPizza: PizzaAtom
 }
 
-export class MyFirstAtom extends AtomicClass {
+export class MyFirstAtom extends Atom<{ sub: Subs, prop: Props }> {
 
-    clapButton: HTMLButtonElement
-    clapSpan: HTMLSpanElement
-    pizzaButton: HTMLButtonElement
+    pizzas: PizzaAtom[] = []
 
-    constructor(public props: IProps) {
-        super(props);
-    }
-
-    struct = ({ title, description, claps, onRendered: someFunction }: IProps, atom: IAtomic) => (
+    struct = () => (
         <div class={style.atom}>
-            <h3>{atom.key} | {title} (#{this.id})</h3>
-            <p>{description}</p>
-
-            <button class={style["main-buttons"]} sub={Subs.PizzaButton}>Give slice of 🍕</button>
+            <Tag label={this.id}></Tag>
+            <h3 class={style.title}>{this.prop.title}</h3>
+            <p>{this.prop.description}</p>
+            <PizzaAtom sub={this.sub.myPizza}></PizzaAtom>
+            <br />
+            <button class={style["main-buttons"]} sub={this.sub.pizzaButton}>Give slice of 🍕</button>
             <div nucleus></div>
-
             <div class={botttomStyle}>
-                <p><span class={largerText} sub={Subs.ClapSpan}>{claps}</span> 👏</p>
-                <button sub={Subs.ClapButton}>👏 this Atom</button>
+                <p><span class={largerText} sub={this.sub.clapSpan}>{this.prop.claps}</span> 👏</p>
+                <button class={style["main-buttons"]} sub={this.sub.clapButton}>👏 this Atom</button>
             </div>
         </div>
     );
 
     onRender() {
-        console.log(`on render of atom #${this.id} with props`, this.props, "Subs: ", Subs)
+        console.log(`on render of atom #${this.id} with props`, this.prop)
 
-        this.clapButton = this.getSub(Subs.ClapButton) as HTMLButtonElement
-        this.clapSpan = this.getSub(Subs.ClapSpan) as HTMLSpanElement
-        this.pizzaButton = this.getSub(Subs.PizzaButton) as HTMLButtonElement
+        this.sub.clapButton.onclick = this.clap.bind(this)
+        this.sub.pizzaButton.onclick = this.addPizza.bind(this)
 
-        this.clapButton.onclick = this.clap.bind(this)
-        this.pizzaButton.onclick = this.addPizza.bind(this)
+        if (this.prop.onRendered) this.prop.onRendered(this.id)
+    }
 
-        if (this.props.onRendered) this.props.onRendered(this.id)
+    onAdded(atom: Atom): void {
+        console.log(`Atom added #${atom.id}`)
+    }
+
+    updateClaps(claps: Props["claps"]) {
+        this.prop.claps = claps
+        this.sub.clapSpan.innerText = `${this.prop.claps}`
     }
 
     clap(ev?: MouseEvent) {
-        ev.preventDefault()
+        if (ev) ev.preventDefault()
         console.log("Clap button fired!")
 
-        this.props.claps++;
-        this.clapSpan.innerText = `${this.props.claps}`
+        this.updateClaps(this.prop.claps + 1)
+
+        this.sub.myPizza.changeColor()
     }
 
     addPizza(ev?: MouseEvent) {
+        if (ev) ev.preventDefault()
         const randomColor = Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, "0")
-        this.add(new PizzaAtom({ bgColor: `#${randomColor}` }))
+        const pizza = new PizzaAtom({ bgColor: `#${randomColor}` })
+        this.pizzas.push(pizza)
+        this.add(pizza)
+    }
 
+    reset() {
+        this.pizzas.forEach(pizza => pizza.getElement().remove())
+        this.pizzas = []
+
+        this.updateClaps(0)
     }
 }

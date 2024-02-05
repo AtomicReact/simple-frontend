@@ -42,7 +42,7 @@
   },
   "include": [
     "./src/**/**.*",
-    "./node_modules/atomicreact-ts/types/global.d.ts", /* CSS import - Step 3: use global declarations modules for css */ ],
+    "./node_modules/atomicreact-ts/types/css.d.ts", /* CSS import - Step 3: use global declarations modules for css */ ],
   "exclude": [
     "public",
     "dist"
