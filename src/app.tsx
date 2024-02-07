@@ -31,7 +31,7 @@ export class AppAtom extends Atom<{ sub: ISubs }> {
     struct = () => (
         <div class={app}>
              <Tag label={this.id}></Tag>
-            <h2 id={title}>Im App Atom</h2>
+            <h2 id={title}>Im App Atom!!!</h2>
 
             <div sub={this.sub.Test} id="test">
                 <MyFirstAtom

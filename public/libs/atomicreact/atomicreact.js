@@ -118,7 +118,7 @@ function e(e,t,i=this,n,c={}){null==this[e]&&Object.defineProperty(i,e,{value:t,
     };
     exports.__config = Object.assign((exports.__config) ? exports.__config : {}, { "host": "127.0.0.1", "port": 1717, "verbose": false });
 });
-dS("simple_frontend/app.atom.css","a8c266da",["app","reset"]);dA("simple_frontend/app", ["require", "exports", "atomicreact/lib/JSX/jsx-runtime", "atomicreact-ts", "./my_atoms/my_first_atom.jsx", "./global.module.css", "./app.atom.css", "./my_atoms/tag/index.jsx", "./my_atoms/pizza/index.jsx"], function (require, exports, jsx_runtime_1, atomicreact_ts_1, my_first_atom_jsx_1, global_module_css_1, app_atom_css_1, index_jsx_1, index_jsx_2) {
+dS("simple_frontend/app.atom.css","ae79d8c3",["app","reset"]);dA("simple_frontend/app", ["require", "exports", "atomicreact/lib/JSX/jsx-runtime", "atomicreact-ts", "./my_atoms/my_first_atom.jsx", "./global.module.css", "./app.atom.css", "./my_atoms/tag/index.jsx", "./my_atoms/pizza/index.jsx"], function (require, exports, jsx_runtime_1, atomicreact_ts_1, my_first_atom_jsx_1, global_module_css_1, app_atom_css_1, index_jsx_1, index_jsx_2) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.AppAtom = void 0;
@@ -140,7 +140,7 @@ dS("simple_frontend/app.atom.css","a8c266da",["app","reset"]);dA("simple_fronten
     }
     exports.AppAtom = AppAtom;
 });
-dS("simple_frontend/global.module.css","a3532267",["largerText","title"]);dA("simple_frontend/index", ["require", "exports", "atomicreact-ts", "./app.jsx"], function (require, exports, atomicreact_ts_1, app_jsx_1) {
+dS("simple_frontend/global.module.css","a363b639",["largerText","title"]);dA("simple_frontend/index", ["require", "exports", "atomicreact-ts", "./app.jsx"], function (require, exports, atomicreact_ts_1, app_jsx_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     atomicreact_ts_1.AtomicReact.onLoad = () => {
@@ -148,13 +148,13 @@ dS("simple_frontend/global.module.css","a3532267",["largerText","title"]);dA("si
         atomicreact_ts_1.AtomicReact.renderElement((new app_jsx_1.AppAtom()), document.getElementById("app"));
     };
 });
-dS("simple_frontend/my_atoms/my_first_atom.module.css","a2dd7b38",["atom","title","main-buttons","bottom"]);dA("simple_frontend/my_atoms/my_first_atom", ["require", "exports", "atomicreact/lib/JSX/jsx-runtime", "atomicreact-ts", "./pizza/index.jsx", "../global.module.css", "./my_first_atom.module.css", "./tag/index.jsx"], function (require, exports, jsx_runtime_1, atomicreact_ts_1, index_jsx_1, global_module_css_1, my_first_atom_module_css_1, index_jsx_2) {
+dS("simple_frontend/my_atoms/my_first_atom.module.css","a46b0e55",["atom","title","main-buttons","bottom"]);dA("simple_frontend/my_atoms/my_first_atom", ["require", "exports", "atomicreact/lib/JSX/jsx-runtime", "atomicreact-ts", "./pizza/index.jsx", "../global.module.css", "./my_first_atom.module.css", "./tag/index.jsx"], function (require, exports, jsx_runtime_1, atomicreact_ts_1, index_jsx_1, global_module_css_1, my_first_atom_module_css_1, index_jsx_2) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.MyFirstAtom = void 0;
     class MyFirstAtom extends atomicreact_ts_1.Atom {
         pizzas = [];
-        struct = () => ((0, jsx_runtime_1.jsxs)("div", { class: my_first_atom_module_css_1.default.atom, children: [(0, jsx_runtime_1.jsx)(index_jsx_2.Tag, { label: this.id }), (0, jsx_runtime_1.jsx)("h3", { class: my_first_atom_module_css_1.default.title, children: this.prop.title }), (0, jsx_runtime_1.jsx)("p", { children: this.prop.description }), (0, jsx_runtime_1.jsx)(index_jsx_1.PizzaAtom, { sub: this.sub.myPizza }), (0, jsx_runtime_1.jsx)("br", {}), (0, jsx_runtime_1.jsx)("button", { class: my_first_atom_module_css_1.default["main-buttons"], sub: this.sub.pizzaButton, children: "Give slice of \uD83C\uDF55" }), (0, jsx_runtime_1.jsx)("div", { nucleus: true, children: (0, jsx_runtime_1.jsx)("h4", { children: "This is the Atom's Nucleus" }) }), (0, jsx_runtime_1.jsx)("section", { children: this.prop.extraSection }), (0, jsx_runtime_1.jsxs)("div", { class: my_first_atom_module_css_1.bottom, children: [(0, jsx_runtime_1.jsxs)("p", { children: [(0, jsx_runtime_1.jsx)("span", { class: global_module_css_1.largerText, sub: this.sub.clapSpan, children: this.prop.claps }), " \uD83D\uDC4F"] }), (0, jsx_runtime_1.jsx)("button", { class: my_first_atom_module_css_1.default["main-buttons"], sub: this.sub.clapButton, children: "\uD83D\uDC4F this Atom" })] })] }));
+        struct = () => ((0, jsx_runtime_1.jsxs)("div", { class: my_first_atom_module_css_1.default.atom, children: [(0, jsx_runtime_1.jsx)(index_jsx_2.Tag, { label: this.id }), (0, jsx_runtime_1.jsx)("h3", { class: my_first_atom_module_css_1.default.title, children: this.prop.title }), (0, jsx_runtime_1.jsx)("p", { children: this.prop.description }), (0, jsx_runtime_1.jsx)(index_jsx_1.PizzaAtom, { sub: this.sub.myPizza }), (0, jsx_runtime_1.jsx)("br", {}), (0, jsx_runtime_1.jsx)("button", { class: my_first_atom_module_css_1.default["main-buttons"], sub: this.sub.pizzaButton, children: "Give slice of \uD83C\uDF55" }), (0, jsx_runtime_1.jsx)("div", { nucleus: true, children: (0, jsx_runtime_1.jsx)("h4", { children: "This is the Atom's Nucleus" }) }), (0, jsx_runtime_1.jsx)("section", { children: this.prop.extraSection }), (0, jsx_runtime_1.jsxs)("div", { class: my_first_atom_module_css_1.bottom, children: [(0, jsx_runtime_1.jsxs)("p", { children: [(0, jsx_runtime_1.jsx)("span", { class: global_module_css_1.largerText, sub: this.sub.clapSpan, children: this.prop.claps }), " \uD83D\uDC4F eb"] }), (0, jsx_runtime_1.jsx)("button", { class: my_first_atom_module_css_1.default["main-buttons"], sub: this.sub.clapButton, children: "\uD83D\uDC4F this Atom" })] })] }));
         onRender() {
             console.log(`on render of atom #${this.id} with props`, this.prop);
             this.sub.clapButton.onclick = this.clap.bind(this);
@@ -205,7 +205,7 @@ dA("simple_frontend/my_atoms/pizza/index", ["require", "exports", "atomicreact/l
     }
     exports.PizzaAtom = PizzaAtom;
 });
-dS("simple_frontend/my_atoms/pizza/style.module.css","a8c973c5",["atom"]);dA("simple_frontend/my_atoms/tag/index", ["require", "exports", "atomicreact/lib/JSX/jsx-runtime", "atomicreact-ts", "./style.module.css"], function (require, exports, jsx_runtime_1, atomicreact_ts_1, style_module_css_1) {
+dS("simple_frontend/my_atoms/pizza/style.module.css","a0611445",["atom"]);dA("simple_frontend/my_atoms/tag/index", ["require", "exports", "atomicreact/lib/JSX/jsx-runtime", "atomicreact-ts", "./style.module.css"], function (require, exports, jsx_runtime_1, atomicreact_ts_1, style_module_css_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Tag = void 0;
@@ -217,4 +217,4 @@ dS("simple_frontend/my_atoms/pizza/style.module.css","a8c973c5",["atom"]);dA("si
     }
     exports.Tag = Tag;
 });
-dS("simple_frontend/my_atoms/tag/style.module.css","a0baefa2",["atomID"]);atomicreact.load();
+dS("simple_frontend/my_atoms/tag/style.module.css","a88bb540",["atomID"]);atomicreact.load();

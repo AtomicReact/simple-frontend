@@ -1,51 +1,51 @@
-.a8c266da_app {
+.ae79d8c3_app {
     color: aquamarine;
     background-color: #0e2424;  
     border: 1px solid green;
     padding: 15px;
 }
 
-.a8c266da_reset {
+.ae79d8c3_reset {
     margin-top: 25px;
-}.a3532267_largerText {
+}.a363b639_largerText {
     font-size: 3em;
 }
 
-#a3532267_title {
+#a363b639_title {
     color: #06812b;
-}.a2dd7b38_atom {
+}.a46b0e55_atom {
     border: 1px solid #02bada;
     padding: 5px;
 }
 
-.a2dd7b38_title {
+.a46b0e55_title {
     color: #02bada;
 }
 
-.a2dd7b38_atom [a-n] {
+.a46b0e55_atom [a-n] {
     border: 1px dashed #02bada;
     border-radius: 10px;
     margin: 20px;
     padding: 5px 10px;
 }
 
-.a2dd7b38_atom .a2dd7b38_main-buttons {
+.a46b0e55_atom .a46b0e55_main-buttons {
     margin-bottom: 6px;
     padding: 6px;
 }
 
-.a2dd7b38_bottom {
+.a46b0e55_bottom {
     margin-top: 10px;
     text-align: right;
     /* border-style: dotted; */
     border: 1px dotted #02bada;
-}.a8c973c5_atom {
+}.a0611445_atom {
     border: 1px solid green;
     padding: 10px;
     display: inline-block;
     margin-right: 10px;
     margin: 5px 5px;
-}.a0baefa2_atomID {
+}.a88bb540_atomID {
     position: absolute;
     top: 0;
     right: 0;

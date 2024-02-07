@@ -38,7 +38,7 @@ export class MyFirstAtom extends Atom<{ sub: Subs, prop: Props }> {
                 {this.prop.extraSection}
             </section>
             <div class={botttomStyle}>
-                <p><span class={largerText} sub={this.sub.clapSpan}>{this.prop.claps}</span> 👏 eb</p>
+                <p><span class={largerText} sub={this.sub.clapSpan}>{this.prop.claps}</span> 👏</p>
                 <button class={style["main-buttons"]} sub={this.sub.clapButton}>👏 this Atom</button>
             </div>
         </div>
