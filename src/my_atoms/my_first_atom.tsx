@@ -10,7 +10,8 @@ interface Props {
     title: string,
     description?: string,
     claps: number,
-    onRendered?: (id: string) => void
+    onRendered?: (id: string) => void,
+    extraSection: HTMLElement
 }
 
 interface Subs { /* Sub atoms */
@@ -32,9 +33,12 @@ export class MyFirstAtom extends Atom<{ sub: Subs, prop: Props }> {
             <PizzaAtom sub={this.sub.myPizza}></PizzaAtom>
             <br />
             <button class={style["main-buttons"]} sub={this.sub.pizzaButton}>Give slice of 🍕</button>
-            <div nucleus></div>
+            <div nucleus><h4>This is the Atom's Nucleus</h4></div>
+            <section>
+                {this.prop.extraSection}
+            </section>
             <div class={botttomStyle}>
-                <p><span class={largerText} sub={this.sub.clapSpan}>{this.prop.claps}</span> 👏</p>
+                <p><span class={largerText} sub={this.sub.clapSpan}>{this.prop.claps}</span> 👏 eb</p>
                 <button class={style["main-buttons"]} sub={this.sub.clapButton}>👏 this Atom</button>
             </div>
         </div>

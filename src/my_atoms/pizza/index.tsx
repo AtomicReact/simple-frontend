@@ -1,4 +1,4 @@
-import { Atom } from "atomicreact-ts";
+import { Atom } from "atomicreact-ts"
 
 import { atom } from "./style.module.css"
 
@@ -12,7 +12,7 @@ export class PizzaAtom extends Atom<{ prop: IProps }> {
     )
 
     changeColor = (color?: string) => {
-        color = color || Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, "0")
-        this.getElement().style.backgroundColor = `#${color}`
+        this.prop.bgColor = `#${color || Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, "0")}`
+        this.getElement().style.backgroundColor = this.prop.bgColor
     }
 }

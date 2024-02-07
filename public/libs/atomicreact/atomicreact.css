@@ -1,1 +1,61 @@
-.a8c266da_app{background-color:#0e2424;border:1px solid green;color:#7fffd4;padding:15px}.a8c266da_reset{margin-top:25px}.a3532267_largerText{font-size:3em}#a3532267_title{color:#06812b}.a2dd7b38_atom{border:1px solid #02bada;padding:5px}.a2dd7b38_title{color:#02bada}.a2dd7b38_atom [a-n]{border:1px dashed #02bada;border-radius:10px;margin:20px;padding:5px 10px}.a2dd7b38_atom .a2dd7b38_main-buttons{margin-bottom:6px;padding:6px}.a2dd7b38_bottom{border:1px dotted #02bada;margin-top:10px;text-align:right}.a8c973c5_atom{border:1px solid green;display:inline-block;margin:5px;padding:10px}.a0baefa2_atomID{border-bottom:1px solid #e0bc07;border-left:1px solid #e0bc07;border-radius:0 0 0 10px;color:#8c7400;padding:5px;position:absolute;right:0;top:0}body{background-color:#182828;color:#deb887;font-family:Franklin Gothic Medium,Arial Narrow,Arial,sans-serif}
+.a8c266da_app {
+    color: aquamarine;
+    background-color: #0e2424;  
+    border: 1px solid green;
+    padding: 15px;
+}
+
+.a8c266da_reset {
+    margin-top: 25px;
+}.a3532267_largerText {
+    font-size: 3em;
+}
+
+#a3532267_title {
+    color: #06812b;
+}.a2dd7b38_atom {
+    border: 1px solid #02bada;
+    padding: 5px;
+}
+
+.a2dd7b38_title {
+    color: #02bada;
+}
+
+.a2dd7b38_atom [a-n] {
+    border: 1px dashed #02bada;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 5px 10px;
+}
+
+.a2dd7b38_atom .a2dd7b38_main-buttons {
+    margin-bottom: 6px;
+    padding: 6px;
+}
+
+.a2dd7b38_bottom {
+    margin-top: 10px;
+    text-align: right;
+    /* border-style: dotted; */
+    border: 1px dotted #02bada;
+}.a8c973c5_atom {
+    border: 1px solid green;
+    padding: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    margin: 5px 5px;
+}.a0baefa2_atomID {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #e0bc07;
+    border-bottom: 1px solid #e0bc07;
+    border-radius: 0 0 0px 10px;
+    color: #8c7400;
+    padding: 5px;
+}body {
+    background-color: #182828;
+    color: burlywood;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

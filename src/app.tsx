@@ -6,12 +6,14 @@ import { MyFirstAtom } from "./my_atoms/my_first_atom.jsx"
 import { title } from "./global.module.css"
 import { app, reset } from "./app.atom.css"
 import { Tag } from "./my_atoms/tag/index.jsx"
+import { PizzaAtom } from "./my_atoms/pizza/index.jsx"
 
 interface ISubs {
     MyAtom: MyFirstAtom,
     MyOtherAtom: MyFirstAtom,
     ResetButton: HTMLButtonElement,
-    Test: HTMLDivElement
+    Test: HTMLDivElement,
+    myAppPizza: PizzaAtom
 }
 
 export class AppAtom extends Atom<{ sub: ISubs }> {
@@ -41,31 +43,34 @@ export class AppAtom extends Atom<{ sub: ISubs }> {
                         this.someAction()
                     }}
                     sub={this.sub.MyAtom}
+                    extraSection={<div>This is a extra section as prop. Take your slice of <PizzaAtom bgColor={"#0F00FF"}></PizzaAtom></div>}
                 >
                     <h4>Im in nucleus placed by #{this.id}</h4>
                     <ul>
                         <li>item A</li>
                         <li sub="itemB">item B</li>
                         <li>item C</li>
+                        <li>item D</li>
                     </ul>
                 </MyFirstAtom>
                 <br />
             </div>
-            
+
             <MyFirstAtom
                 title="Lorem Ipsum Title"
                 description="Some description here"
                 claps={0}
-                sub={this.sub.MyOtherAtom}>
+                sub={this.sub.MyOtherAtom}
+                extraSection={<h3>This is another extra section</h3>}>
             </MyFirstAtom>
 
 
             <button class={reset} sub={this.sub.ResetButton}>Reset</button>
 
-        </div>
+        </div >
     )
 
-    someAction = () => {
-        console.log(`#${this.id}`, "someAction() fired")
-    }
+someAction = () => {
+    console.log(`#${this.id}`, "someAction() fired")
+}
 }

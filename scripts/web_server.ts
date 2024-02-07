@@ -1,4 +1,4 @@
-import { Atomic, LiveReload } from "atomicreact-ts"
+import { Atomic, HotReload } from "atomicreact-ts"
 import express, { Express } from "express"
 import { resolve } from "path"
 
@@ -19,13 +19,13 @@ app.listen(3000, "127.0.0.1"/* "192.168.15.17" */, async () => {
             verbose: true,
             packageName: "simple_frontend",
             minify: {
-                js: true,
-                css: true,
+                js: false,
+                css: false,
             }
         })
-        new LiveReload({
+        new HotReload({
             port: 1717,
-            verbose: true,
+            verbose: false,
             atomic
         })
 
