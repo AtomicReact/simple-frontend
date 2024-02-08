@@ -7,7 +7,7 @@
     "dev": "ts-node --transpile-only ./scripts/web_server.ts development",
     "build": "ts-node ./scripts/build.ts",
     "build_": "rm -rf dist && npx tsc -b && node dist/build.js",
-    "start": "ts-node ./scripts/web_server.ts"
+    "start": "npm run build && ts-node ./scripts/web_server.ts"
   },
   "author": "Guihgo",
   "license": "ISC",
