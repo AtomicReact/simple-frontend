@@ -1,6 +1,6 @@
-import { Atomic, IBundlerConfig } from "atomicreact-ts"
+import { Atomic, IAtomicConfig } from "atomicreact-ts"
 
-export const buildConfig: IBundlerConfig = {
+export const buildConfig: IAtomicConfig = {
     atomicDir: "src",
     bundleDir: "public/libs/atomicreact",
     verbose: true,
