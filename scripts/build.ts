@@ -1,10 +1,14 @@
 import { Atomic, IAtomicConfig } from "atomicreact-ts"
 
 export const buildConfig: IAtomicConfig = {
-    atomicDir: "src",
-    bundleDir: "public/libs/atomicreact",
-    verbose: true,
-    packageName: "production_simple_frontend"
+    indexScriptFilePath: "src/index.tsx",
+    outScriptFilePath: "public/libs/atomicreact/atomicreact.js",
+    outStyleFilePath: "public/libs/atomicreact/atomicreact.css",
+    verbose: false,
+    minify: {
+        js: true,
+        css: true
+    }
 }
 
 export async function build() {

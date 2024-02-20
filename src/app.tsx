@@ -8,6 +8,8 @@ import { app, reset } from "./app.atom.css"
 import { Tag } from "./my_atoms/tag/index.jsx"
 import { PizzaAtom } from "./my_atoms/pizza/index.jsx"
 
+import { TinyChipmunkButton } from "simple_frontend_library/atoms/buttons/tiny_chipmunk.jsx"
+
 interface ISubs {
     MyAtom: MyFirstAtom,
     MyOtherAtom: MyFirstAtom,
@@ -30,7 +32,7 @@ export class AppAtom extends Atom<{ sub: ISubs }> {
 
     struct = () => (
         <div class={app}>
-             <Tag label={this.id}></Tag>
+            <Tag label={this.id}></Tag>
             <h2 id={title}>Im App Atom!!!</h2>
 
             <div sub={this.sub.Test} id="test">
@@ -56,6 +58,21 @@ export class AppAtom extends Atom<{ sub: ISubs }> {
                 <br />
             </div>
 
+            <section>
+                <h4>Feature: import external libraries</h4>
+                <p>Lets use some atoms from <a href="https://github.com/AtomicReact/simple-frontend-library">https://github.com/AtomicReact/simple-frontend-library</a></p>
+                <TinyChipmunkButton
+                    label={"Hi Button"}
+                    action={"Go"}
+                    started={"Uhuu"}
+                    onClick={(btn)=>{
+                        btn.toogle()
+                        console.log("Is started:", btn.isStarted())
+                    }}
+                ></TinyChipmunkButton>
+                <br />
+            </section>
+
             <MyFirstAtom
                 title="Lorem Ipsum Title"
                 description="Some description here"
@@ -70,7 +87,7 @@ export class AppAtom extends Atom<{ sub: ISubs }> {
         </div >
     )
 
-someAction = () => {
-    console.log(`#${this.id}`, "someAction() fired")
-}
+    someAction = () => {
+        console.log(`#${this.id}`, "someAction() fired")
+    }
 }

@@ -14,10 +14,10 @@ app.listen(3000, "127.0.0.1"/* "192.168.15.17" */, async () => {
     /* If DEVELOPMENT enviroment, build and watch AtomicReact */
     if (["development", "--dev"].includes(enviroment)) {
         const atomic = new Atomic({
-            atomicDir: "src",
-            bundleDir: "public/libs/atomicreact",
+            indexScriptFilePath: "src/index.tsx",
+            outScriptFilePath: "public/libs/atomicreact/atomicreact.js",
+            outStyleFilePath: "public/libs/atomicreact/atomicreact.css",
             verbose: true,
-            packageName: "simple_frontend",
             minify: {
                 js: false,
                 css: false,
@@ -25,7 +25,7 @@ app.listen(3000, "127.0.0.1"/* "192.168.15.17" */, async () => {
         })
         new HotReload({
             port: 1717,
-            verbose: false,
+            verbose: true,
             atomic
         })
 

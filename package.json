@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "ts-node --transpile-only ./scripts/web_server.ts development",
     "build": "ts-node ./scripts/build.ts",
-    "build_": "rm -rf dist && npx tsc -b && node dist/build.js",
     "start": "npm run build && ts-node ./scripts/web_server.ts"
   },
   "author": "Guihgo",
@@ -16,7 +15,8 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.20",
-    "atomicreact-ts": "^0.1.18",
+    "atomicreact-ts": "^0.1.20",
+    "simple_frontend_library": "^1.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "typescript-plugin-css-modules": "^5.0.2"
